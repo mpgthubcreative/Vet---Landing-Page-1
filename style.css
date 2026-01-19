@@ -1,0 +1,114 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-size: 1.6rem;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container{
+    max-width: 42.8rem;
+    margin: 0 auto;
+    /* border: 1px solid black ; */
+    height: 200rem;
+}
+
+/* Header */
+
+.top-logo{
+    width: 15.4rem;
+    height: 6rem;
+    display: block;
+    margin: 0 auto;
+}
+
+.cta-button{
+    display: inline-block;
+    padding: 1.5rem 2rem;
+    background-color: #46C4E0;    
+    border-radius: 5px;
+    font-size: 1.46rem;
+    color: white;
+    letter-spacing: .73px;
+   text-decoration: none;   
+   width: 3.5rem;
+   text-align: center;
+}
+
+.header-cta{
+    display: none;
+}
+
+.main-header
+{
+   margin-bottom: 2rem;
+}
+
+/* Hero */
+
+header{
+   background-image: url('./Mobile Assets - Home/hero-image.jpg');  
+   background-size:contain;
+   background-position: center;
+   padding-bottom: 3rem;
+
+}
+
+
+
+.hero-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+
+}
+
+.hero-img{
+    width: 35rem;
+    height: 23rem;
+    display: block;
+    margin-bottom: 2rem;
+}
+
+.hero-text{
+    display: flex;
+    flex-direction: column;
+    width: 35rem;
+    margin-bottom: .5rem;
+}
+
+.hero-header{
+    font-size: 3.5rem;
+    font-family: 'Baloo 2', sans-serif;
+    font-weight: 700;
+    line-height: 1;
+     color: black;
+     margin-bottom: 1rem;
+}
+
+.hero-header span{
+    color: #F89C42;
+}
+
+
+.hero-subheader{
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: black;
+}
+
+.hero-cta {
+    display: block;
+    width: 35rem;
+}
+
