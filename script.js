@@ -68,30 +68,3 @@ if (servicesCarousel) {
     window.addEventListener('load', updateServicesArrows);
     updateServicesArrows();
 }
-
-// Results Carousel Navigation
-const resultsCarousel = document.querySelector('.results-carousel');
-const resultsPrevBtn = document.querySelector('.section-results .carousel-arrow.prev');
-
-function updateResultsArrows() {
-    if (!resultsPrevBtn) return;
-    
-    const scrollLeft = resultsCarousel.scrollLeft;
-    
-    // Show/hide prev button
-    if (scrollLeft > 0) {
-        resultsPrevBtn.style.display = 'flex';
-    } else {
-        resultsPrevBtn.style.display = 'none';
-    }
-}
-
-if (resultsPrevBtn && resultsCarousel) {
-    resultsPrevBtn.addEventListener('click', () => {
-        resultsCarousel.scrollTo({
-            left: 0,
-            behavior: 'smooth'
-        });
-        setTimeout(updateResultsArrows, 300);
-    });
-}
