@@ -112,3 +112,113 @@ header{
     width: 35rem;
 }
 
+/* SECTION SERVICES */
+
+.service-section{
+    padding: 0 6rem;
+    position: relative;
+}
+
+.section-header {
+    font-size: 3rem;
+    font-weight: 700;
+    font-family: 'Baloo 2', sans-serif;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.section-header span{
+    color: #F89C42;
+}
+
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: rgba(70, 196, 224, 0.9);
+    color: white;
+    border: none;
+    font-size: 3rem;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: background-color 0.3s;
+}
+
+.carousel-arrow:hover {
+    background-color: rgba(70, 196, 224, 1);
+}
+
+.carousel-arrow.prev {
+    left: 1rem;
+}
+
+.carousel-arrow.next {
+    right: 1rem;
+}
+
+.card-box{
+    display: flex;
+    gap: 2rem;
+    overflow-x: scroll;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0 calc(50% - 12rem);
+}
+
+.card-box::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 24rem;
+    height: auto;
+    border-radius: 10px;
+    background-color: hwb(198 26% 11% / 0.047);
+    overflow: hidden;
+    scroll-snap-align: center;
+}
+
+.image-service{
+    width: 100%;
+    height:22rem;
+    display: block;
+
+}
+.card-text{
+   text-align: center;
+   padding: .5rem 1.5rem 1rem 1.5rem;
+}
+
+.card-header{
+    font-size: 1.8rem;
+    font-weight: 700;
+    font-family: 'Baloo 2', sans-serif;
+    line-height: 1.6rem;
+}
+
+.spacer{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.spacer1{
+    margin-bottom: 1rem;
+}
+
+.spacer3{
+    padding: .5rem 1rem;
+}
+
+.card-subheader{
+    font-size: .86rem;
+    line-height: 1.29;
+}

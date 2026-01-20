@@ -59,5 +59,10 @@
     line-height: 1.4;
 }
 
+.carousel-arrow{
+    display: none;
+    visibility: hidden;
+    po
+}
 
 }
