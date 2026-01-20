@@ -175,6 +175,7 @@ header{
 .card-box::-webkit-scrollbar {
     display: none; /* Chrome, Safari, Opera */
 }
+
 .card{
     display: flex;
     flex-direction: column;
