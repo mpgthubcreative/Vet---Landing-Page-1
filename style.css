@@ -601,6 +601,7 @@ color: #ffffff;
     font-family: 'poppins', sans-serif;
        padding: 0 2rem;
        line-height: 1.76;
+       padding-bottom: 2rem;
 }
 
 .footer-cta{
