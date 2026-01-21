@@ -141,3 +141,24 @@ if (testimonialsCarousel) {
     window.addEventListener('load', updateTestimonialsArrows);
     updateTestimonialsArrows();
 }
+
+// Sticky Mobile CTA - Show/Hide based on Hero Section
+const stickyCTA = document.querySelector('.sticky-mobile-cta');
+const heroSection = document.querySelector('.hero-section');
+
+if (stickyCTA && heroSection) {
+    function toggleStickyCTA() {
+        const heroBottom = heroSection.getBoundingClientRect().bottom;
+        
+        // Hide when in hero section, show when scrolled past
+        if (heroBottom > 0) {
+            stickyCTA.style.display = 'none';
+        } else {
+            stickyCTA.style.display = 'block';
+        }
+    }
+    
+    window.addEventListener('scroll', toggleStickyCTA);
+    window.addEventListener('load', toggleStickyCTA);
+    toggleStickyCTA();
+}

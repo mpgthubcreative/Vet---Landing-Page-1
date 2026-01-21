@@ -35,8 +35,10 @@
 
 .hero-cta{
     display: none;
-    position: static;
-    box-shadow: none;
+}
+
+.sticky-mobile-cta {
+    display: none !important;
 }
 
 .hero-container{
@@ -58,8 +60,10 @@
 .hero-text{
     display: flex;
     flex-direction: column;
-    width: 54rem;
+    width: 64rem;
     order: 1;
+    padding: 0rem 5rem;
+    margin-bottom: 10rem;
 }
 
 .hero-header{
@@ -183,6 +187,7 @@
     transition: all 0.3s;
     line-height: .9;
     letter-spacing: .75px;
+    display: block;
 }
 
 .map-container{

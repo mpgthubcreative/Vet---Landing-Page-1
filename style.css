@@ -114,6 +114,37 @@ header{
     width: 35rem;
 }
 
+/* Sticky Mobile CTA */
+
+.sticky-mobile-cta {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 35rem;
+    z-index: 999;
+    box-shadow: 0 4px 15px rgba(70, 196, 224, 0.5);
+    display: block;
+}
+
+.sticky-mobile-cta.hide {
+    display: none;
+}
+
+.sticky-mobile-cta.show {
+    opacity: 1;
+    visibility: visible;
+    box-shadow: 0 4px 15px rgba(70, 196, 224, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.sticky-mobile-cta.show {
+    opacity: 1;
+    visibility: visible;
+}
+
 /* SECTION SERVICES */
 
 .service-section{
@@ -580,6 +611,7 @@ color: #ffffff;
     transition: all 0.3s;
     line-height: .9;
     letter-spacing: .75px;
+    display: none;
 }
 
 .footer-cta-button:hover{
