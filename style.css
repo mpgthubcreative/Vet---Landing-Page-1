@@ -14,13 +14,17 @@ body{
     line-height: 1.6;
     background-color: #ffffff;
     font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+body.how-page {
+    overflow: hidden;
 }
 
 .container{
     max-width: 42.8rem;
     margin: 0 auto;
     /* border: 1px solid black ; */
-    height: 200rem;
 }
 
 /* Header */
@@ -121,20 +125,14 @@ header{
     bottom: 2rem;
     left: 50%;
     transform: translateX(-50%);
-    width: 35rem;
+    width: 90%;
+    max-width: 35rem;
     z-index: 999;
     box-shadow: 0 4px 15px rgba(70, 196, 224, 0.5);
-    display: block;
+    display: block !important;
 }
 
 .sticky-mobile-cta.hide {
-    display: none;
-}
-
-.sticky-mobile-cta.show {
-    opacity: 1;
-    visibility: visible;
-    box-shadow: 0 4px 15px rgba(70, 196, 224, 0.5);
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s, visibility 0.3s;
@@ -143,6 +141,7 @@ header{
 .sticky-mobile-cta.show {
     opacity: 1;
     visibility: visible;
+    transition: opacity 0.3s, visibility 0.3s;
 }
 
 /* SECTION SERVICES */
@@ -332,7 +331,7 @@ color: #ffffff;
     text-align: center;
     font-weight: 700;
     padding-top: 3rem;
-    margin-bottom: 5rem;
+    margin-bottom: 1rem;
 }
 
 .testimonial-arrow {
@@ -449,8 +448,7 @@ color: #ffffff;
     display: grid;
     grid-template-columns: 1fr;
     background-color: #ffffff;
-    margin-bottom: 3rem;
-    margin-top: 5rem;
+    margin-top: 3rem;
     padding: 0rem 3rem;
 }
 
@@ -467,7 +465,7 @@ color: #ffffff;
 }
 
 .contact-info{
-    padding: 3rem;
+    padding: 3rem 3rem 0rem 3rem;
    
 }
 
@@ -605,7 +603,7 @@ color: #ffffff;
 }
 
 .footer-cta{
-    width: 100%;
+    width: 80%;
     padding: 1.2rem 3rem;
     font-size: 1.5rem;
     font-weight: 600;
@@ -620,3 +618,39 @@ color: #ffffff;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(248, 156, 66, 0.3);
 }
+
+#services {
+    background: linear-gradient(180deg, #ffffff 0%, #e0f7ff 50%, #46c4e019 100%);
+    padding-bottom: 29rem;
+
+}
+
+#services h2{
+    text-align: center;
+    margin: 2rem;
+    padding-top: 3rem;
+}
+.service-button {
+  display: block;
+  margin: 1rem auto;
+  padding: 1.4rem 0.5rem;
+  background: #f3f4f6;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #111;
+  font-weight: 600;
+  width: 30rem;
+  text-align: center;
+}
+.service-button:hover {
+  background: #e5e7eb;
+}
+
+
+.main-header.how-page
+{
+   margin-bottom: 0;
+   padding-bottom: 2rem;
+   background-image:none;
+}
+

@@ -9,7 +9,7 @@
     margin: 0rem;
     width: 21rem;
     height: 8.5rem  ;
-}
+}   
 .main-header{
     display: flex;
     justify-content: space-between;
@@ -20,6 +20,16 @@
    background-image: url('./Mobile Assets - Home/hero-image.jpg');
     z-index: 1000;
     /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); */
+}
+
+#services ~ * .main-header,
+body:has(#services) .main-header {
+    justify-content: center;
+    padding: 2rem 0;
+}
+
+body:has(#services) .main-header .top-logo {
+    margin: 0 auto;
 }
 
 

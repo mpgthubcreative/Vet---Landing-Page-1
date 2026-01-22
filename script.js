@@ -152,9 +152,11 @@ if (stickyCTA && heroSection) {
         
         // Hide when in hero section, show when scrolled past
         if (heroBottom > 0) {
-            stickyCTA.style.display = 'none';
+            stickyCTA.classList.add('hide');
+            stickyCTA.classList.remove('show');
         } else {
-            stickyCTA.style.display = 'block';
+            stickyCTA.classList.remove('hide');
+            stickyCTA.classList.add('show');
         }
     }
     
