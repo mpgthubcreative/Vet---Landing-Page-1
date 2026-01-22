@@ -35,7 +35,11 @@
         <img class="top-logo" src="./Mobile Assets - Home/top-logo.png" alt="Happy Paws Logo" width="154" height="60" loading="eager"/>
         
         <div class="cta-button1">
-        <a class="header-cta cta-button" href="./how.html"> Book an Appointment </a>
+        <a class="header-cta cta-button" href="./how.html"  
+                 onclick="gtag('event', 'book_appointment_click', {
+                event_category: 'CTA',
+                event_label: 'Main-header'
+                });"> Book an Appointment </a>
         </div>
     </div>
 
@@ -224,7 +228,7 @@
                         <p class="footer-cta-text">Choose a convenient time, tell us about your pet, and we'll take care of the rest. Fast, easy, and stress-free.</p>
                            <a class="footer-cta cta-button" href="./how.html" onclick="gtag('event', 'book_appointment_click', {
                 event_category: 'CTA',
-                event_label: 'Hero'
+                event_label: 'Footer'
                 });"> Book an Appointment </a>
                  </div>
                     </div>
@@ -236,7 +240,7 @@
     <a class="sticky-mobile-cta cta-button" href="./how.html"
     onclick="gtag('event', 'book_appointment_click', {
     event_category: 'CTA',
-    event_label: 'Hero'
+    event_label: 'Sticky'
     });"
     >Book an Appointment</a>
 
