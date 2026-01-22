@@ -4,6 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FLWHN6DBM9"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-FLWHN6DBM9');
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bakbak+One&family=Baloo+2:wght@400..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -48,7 +58,11 @@
                 </div>
     
                  
-                 <a class="hero-cta cta-button" href="./how.html"> Book an Appointment </a>
+                 <a class="hero-cta cta-button" href="./how.html" 
+                 onclick="gtag('event', 'book_appointment_click', {
+                event_category: 'CTA',
+                event_label: 'Hero'
+                });"> Book an Appointment </a>
                  </div>
 
         </section>
@@ -208,7 +222,10 @@
                     <div class="footer-cta-content">
                         <p class="footer-cta-header">Book Your <span>Pet's Visit</span> in Minutes</p>
                         <p class="footer-cta-text">Choose a convenient time, tell us about your pet, and we'll take care of the rest. Fast, easy, and stress-free.</p>
-                           <a class="footer-cta cta-button" href="./how.html"> Book an Appointment </a>
+                           <a class="footer-cta cta-button" href="./how.html" onclick="gtag('event', 'book_appointment_click', {
+                event_category: 'CTA',
+                event_label: 'Hero'
+                });"> Book an Appointment </a>
                  </div>
                     </div>
                 </div>
@@ -216,7 +233,12 @@
         </footer>
 
     <!-- Sticky CTA for Mobile Only -->
-    <a class="sticky-mobile-cta cta-button" href="./how.html">Book an Appointment</a>
+    <a class="sticky-mobile-cta cta-button" href="./how.html"
+    onclick="gtag('event', 'book_appointment_click', {
+    event_category: 'CTA',
+    event_label: 'Hero'
+    });"
+    >Book an Appointment</a>
 
 
 
