@@ -69,78 +69,41 @@ if (servicesCarousel) {
     updateServicesArrows();
 }
 
-// Testimonials Carousel Navigation
-const testimonialsCarousel = document.querySelector('.testimonial-carousel');
-const testimonialsPrevBtn = document.querySelector('.section-testimonial .testimonial-arrow.prev');
-const testimonialsNextBtn = document.querySelector('.section-testimonial .testimonial-arrow.next');
-const testimonialCards = document.querySelectorAll('.testimonial-card');
-let currentTestimonialIndex = 0;
-
-function scrollToTestimonial(index) {
-    if (!testimonialsCarousel || !testimonialCards[index]) return;
-    
-    const card = testimonialCards[index];
-    const cardLeft = card.offsetLeft;
-    const cardWidth = card.offsetWidth;
-    const containerWidth = testimonialsCarousel.clientWidth;
-    
-    const scrollPosition = cardLeft - (containerWidth / 2) + (cardWidth / 2);
-    
-    testimonialsCarousel.scrollTo({
-        left: scrollPosition,
-        behavior: 'smooth'
-    });
-}
-
-function updateTestimonialsArrows() {
-    if (!testimonialsPrevBtn || !testimonialsNextBtn || !testimonialsCarousel) return;
-    
-    const scrollLeft = testimonialsCarousel.scrollLeft;
-    const maxScroll = testimonialsCarousel.scrollWidth - testimonialsCarousel.clientWidth;
-    
-    if (scrollLeft >= maxScroll - 5) {
-        testimonialsPrevBtn.style.display = 'flex';
-        testimonialsNextBtn.style.display = 'none';
-    } else if (scrollLeft <= 5) {
-        testimonialsPrevBtn.style.display = 'none';
-        testimonialsNextBtn.style.display = 'flex';
-    } else {
-        testimonialsPrevBtn.style.display = 'flex';
-        testimonialsNextBtn.style.display = 'flex';
-    }
-}
-
-if (testimonialsPrevBtn && testimonialsCarousel) {
-    testimonialsPrevBtn.addEventListener('click', () => {
-        currentTestimonialIndex = Math.max(0, currentTestimonialIndex - 1);
-        scrollToTestimonial(currentTestimonialIndex);
-        setTimeout(updateTestimonialsArrows, 300);
-    });
-}
-
-if (testimonialsNextBtn && testimonialsCarousel) {
-    testimonialsNextBtn.addEventListener('click', () => {
-        currentTestimonialIndex = Math.min(testimonialCards.length - 1, currentTestimonialIndex + 1);
-        scrollToTestimonial(currentTestimonialIndex);
-        setTimeout(updateTestimonialsArrows, 300);
-    });
-}
-
-// Click on testimonial cards to center them
-testimonialCards.forEach((card, index) => {
-    card.addEventListener('click', () => {
-        currentTestimonialIndex = index;
-        scrollToTestimonial(index);
-        setTimeout(updateTestimonialsArrows, 300);
+// Card interaction for mobile - toggle active state on click
+cards.forEach(card => {
+    card.addEventListener('click', function(e) {
+        // Only apply toggle behavior on mobile
+        if (window.innerWidth < 768) {
+            // Don't toggle if clicking the Book Now button directly
+            if (e.target.classList.contains('card-book-button')) {
+                return;
+            }
+            
+            e.preventDefault();
+            
+            // Toggle active class
+            const isActive = this.classList.contains('active');
+            
+            // Remove active from all cards
+            cards.forEach(c => c.classList.remove('active'));
+            
+            // Add active to clicked card if it wasn't active
+            if (!isActive) {
+                this.classList.add('active');
+            }
+        }
     });
 });
 
-// Update arrows on scroll
-if (testimonialsCarousel) {
-    testimonialsCarousel.addEventListener('scroll', updateTestimonialsArrows);
-    window.addEventListener('load', updateTestimonialsArrows);
-    updateTestimonialsArrows();
-}
+// Close active card when clicking outside on mobile
+document.addEventListener('click', function(e) {
+    if (window.innerWidth < 768) {
+        const isClickInsideCard = e.target.closest('.card');
+        if (!isClickInsideCard) {
+            cards.forEach(card => card.classList.remove('active'));
+        }
+    }
+});
 
 // Sticky Mobile CTA - Show/Hide based on Hero Section
 const stickyCTA = document.querySelector('.sticky-mobile-cta');
@@ -164,3 +127,35 @@ if (stickyCTA && heroSection) {
     window.addEventListener('load', toggleStickyCTA);
     toggleStickyCTA();
 }
+
+// Service Card Mobile Touch/Click Interaction
+cards.forEach(card => {
+    // For mobile - toggle on click/touch
+    card.addEventListener('click', function(e) {
+        // Only toggle if not clicking the button
+        if (!e.target.closest('.card-overlay-button')) {
+            // Check if screen is mobile (less than 768px)
+            if (window.innerWidth < 768) {
+                // Close all other cards
+                cards.forEach(otherCard => {
+                    if (otherCard !== card) {
+                        otherCard.classList.remove('active');
+                    }
+                });
+                // Toggle current card
+                this.classList.toggle('active');
+            }
+        }
+    });
+});
+
+// Close overlay when clicking outside on mobile
+document.addEventListener('click', function(e) {
+    if (window.innerWidth < 768) {
+        if (!e.target.closest('.card')) {
+            cards.forEach(card => {
+                card.classList.remove('active');
+            });
+        }
+    }
+});

@@ -137,20 +137,22 @@ body:has(#services) .main-header .top-logo {
     margin-bottom: 8rem;
 }
 
-.testimonial-arrow{
-    display: none;
-    visibility: hidden;
+.section-testimonial{
+    padding: 0 10rem;
+}
 
+.testimonial-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    margin-top: 0;
 }
 
 .testimonial-card{
-    width: 31rem;
-    height: 26rem;
-
-}
-
-.section-testimonial{
-    padding: 0 10rem;
+    width: 100%;
+    height: auto;
+    min-height: 28rem;
+    margin-top: 8rem;
 }
 
 .contact-section{
@@ -214,6 +216,23 @@ body:has(#services) .main-header .top-logo {
        padding-bottom: 0rem;
 }
 
+#services {
+    background: linear-gradient(180deg, #ffffff 0%, #e0f7ff 50%, #46c4e019 100%);
+    padding-bottom: 100rem;
 
+}
+
+#services h2{
+    text-align: center;
+    margin: 2rem;
+    padding-top: 3rem;
+    font-size: 3rem;
+}
+.service-button {
+  margin: 5rem auto;
+  font-size: 3rem;
+  width: 60rem;
+  padding: 3rem 2rem;
+}
 
 }
