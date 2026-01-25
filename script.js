@@ -69,10 +69,46 @@ if (servicesCarousel) {
     updateServicesArrows();
 }
 
-// Card interaction for mobile - toggle active state on click
+// Auto-activate card on scroll for mobile
+function updateActiveCard() {
+    if (window.innerWidth < 768 && servicesCarousel) {
+        const containerCenter = servicesCarousel.scrollLeft + (servicesCarousel.clientWidth / 2);
+        
+        let closestCard = null;
+        let closestDistance = Infinity;
+        
+        cards.forEach(card => {
+            const cardCenter = card.offsetLeft + (card.offsetWidth / 2);
+            const distance = Math.abs(containerCenter - cardCenter);
+            
+            if (distance < closestDistance) {
+                closestDistance = distance;
+                closestCard = card;
+            }
+        });
+        
+        // Remove active from all cards
+        cards.forEach(c => c.classList.remove('active'));
+        
+        // Add active to the centered card
+        if (closestCard) {
+            closestCard.classList.add('active');
+        }
+    }
+}
+
+// Listen to scroll events on the carousel
+if (servicesCarousel) {
+    servicesCarousel.addEventListener('scroll', updateActiveCard);
+    // Initialize on load
+    window.addEventListener('load', updateActiveCard);
+    updateActiveCard();
+}
+
+// Card click interaction for mobile - allow clicking to manually activate
 cards.forEach(card => {
     card.addEventListener('click', function(e) {
-        // Only apply toggle behavior on mobile
+        // Only apply on mobile
         if (window.innerWidth < 768) {
             // Don't toggle if clicking the Book Now button directly
             if (e.target.classList.contains('card-book-button')) {
@@ -81,28 +117,24 @@ cards.forEach(card => {
             
             e.preventDefault();
             
-            // Toggle active class
-            const isActive = this.classList.contains('active');
-            
             // Remove active from all cards
             cards.forEach(c => c.classList.remove('active'));
             
-            // Add active to clicked card if it wasn't active
-            if (!isActive) {
-                this.classList.add('active');
-            }
+            // Add active to clicked card
+            this.classList.add('active');
+            
+            // Scroll to center this card
+            const cardLeft = this.offsetLeft;
+            const cardWidth = this.offsetWidth;
+            const containerWidth = servicesCarousel.clientWidth;
+            const scrollPosition = cardLeft - (containerWidth / 2) + (cardWidth / 2);
+            
+            servicesCarousel.scrollTo({
+                left: scrollPosition,
+                behavior: 'smooth'
+            });
         }
     });
-});
-
-// Close active card when clicking outside on mobile
-document.addEventListener('click', function(e) {
-    if (window.innerWidth < 768) {
-        const isClickInsideCard = e.target.closest('.card');
-        if (!isClickInsideCard) {
-            cards.forEach(card => card.classList.remove('active'));
-        }
-    }
 });
 
 // Sticky Mobile CTA - Show/Hide based on Hero Section

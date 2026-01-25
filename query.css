@@ -107,8 +107,7 @@ body:has(#services) .main-header .top-logo {
 }
 
 .service-section{
-    margin-top: 3rem;
-    margin-bottom: 5rem;
+    margin: 5rem 0;
 }
 
 .about-img{
@@ -134,7 +133,7 @@ body:has(#services) .main-header .top-logo {
 }
 
 .reels-section{
-    margin-bottom: 8rem;
+    margin: 5rem 0;
 }
 
 .section-testimonial{

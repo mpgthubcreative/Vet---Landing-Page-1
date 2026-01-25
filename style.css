@@ -149,7 +149,7 @@ header{
 .service-section{
     padding: 0 3rem;
     position: relative;
-    margin-bottom: 3rem;
+    margin: 5rem 0;
 }
 
 .section-header {
@@ -314,7 +314,7 @@ header{
 .about-section{
     display: grid;
     grid-template-columns: 1fr;
-    margin-bottom: 3rem;
+    margin: 5rem 0;
 }
 
 .about-img{
@@ -368,7 +368,7 @@ color: #ffffff;
 
 .section-testimonial{
     padding: 0 3rem;
-    margin-bottom: 4rem;
+    margin: 5rem 0;
 }
 
 .testimonial-header{
@@ -443,7 +443,7 @@ color: #ffffff;
     display: grid;
     grid-template-columns: 1fr;
     background-color: #ffffff;
-    margin-top: 3rem;
+    margin: 5rem 0;
     padding: 0rem 3rem;
 }
 
